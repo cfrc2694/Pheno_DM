@@ -11,7 +11,7 @@
 *.nav
 *.snm
 *.vrb
-*.pdf
+# *.pdf
 *.dvi
 *.ps
 *.eps
