@@ -5,7 +5,7 @@
 \usepackage{palatino}
 \usepackage{multicol,bigstrut}
 \usepackage{listings}
-\usepackage{tikz}
+\usepackage{tikz,slashed}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
 \usepackage{booktabs}
@@ -18,16 +18,16 @@
 
 \renewcommand{\baselinestretch}{0.9}
 
-% \usepackage[backend=bibtex8,style=authortitle,autocite=footnote]{biblatex}
-%\addbibresource{../../references.bib}
+\usepackage[backend=bibtex8,style=authortitle,autocite=footnote]{biblatex}
+\addbibresource{references.bib}
 
-% \renewbibmacro*{cite:title}{%
-% 	\printtext[bibhyperref]{%
-% 		\printfield[citetitle]{labeltitle}%
-% 		\setunit{\space}%
-% 		\printtext[parens]{\printdate}%
-% 	}%
-% }
+\renewbibmacro*{cite:title}{%
+	\printtext[bibhyperref]{%
+		\printfield[citetitle]{labeltitle}%
+		\setunit{\space}%
+		\printtext[parens]{\printdate}%
+	}%
+}
 
 \renewcommand{\figurename}{{\bf Fig.}}
 \usefonttheme{serif} % default family is serif
@@ -71,137 +71,301 @@
     \tableofcontents
 \end{frame}
 
+% \section{Introduction}
+% \begin{frame}{Dark Matter: A Missing Piece}{One of the Main Problems in 
+% Contemporary Physics}
+%     \begin{minipage}{0.5\textwidth}
+%         \begin{itemize}
+%             \item Populates the universe with non-baryonic matter.
+%             \item It is near to the 25\% of the total energy density of the universe.
+%             \item Mainly cold, non-relativistic, and weakly or feably interacting (massive).
+%             \item It is ``invisible'' to the standard detection methods.
+%         \end{itemize}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.45\textwidth}
+%         \includegraphics[width=\textwidth]{../Images/schematic_DMdetections.png}
+%     \end{minipage}
+%     \pause
+%     % \vfill
+%     \begin{center}
+%         \includegraphics[width=0.7\textwidth]{../Images/Higgs_portal.png}
+%     \end{center}
+% \end{frame}
+
 \section{Introduction}
-\begin{frame}{Dark Matter: The Missing Piece}
-    \begin{itemize}
-        \item Evidence for dark matter from cosmological observations
-        \item The need for particle physics models beyond the Standard Model
-        \item Higgs-portal as a minimal and well-motivated framework
-    \end{itemize}
+\begin{frame}{Dark Matter: A Missing Piece}{One of the Main Problems in 
+Contemporary Physics}
+    
+    \begin{columns}[T]
+        \begin{column}{0.53\textwidth}
+            \textbf{Key Properties:}
+            \begin{itemize}
+                \item \textbf{26\%} of universe's energy density (Planck 2018)
+                \item \textbf{Cold \& non-relativistic} ($\Rightarrow$ structure formation)
+                \item \textbf{Weakly interacting}: No EM/strong forces
+                \item \textbf{Invisible}: Only gravitational evidence
+                %\item The interaction comunicates the SM with the DM sector.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{../Images/schematic_DMdetections.png}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5cm}
+    \pause
+
+    \textbf{The Higgs Portal Advantage:}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{../Images/Higgs_portal.png} \\
+        \footnotesize Simplest SM-DM connection via Higgs boson (spin-0 mediator)
+    \end{center}
+\end{frame}
+
+\begin{frame}{Higgs $\to$ invisible: a window to new physics}
+  \begin{itemize}
+    \item In the Standard Model (SM), the Higgs is a fundamental scalar with $m_H = 125.1$~GeV and $\Gamma_H^{\text{SM}} \approx 4.07$ MeV.
+    \vfill
+    \item The current measurement of the total Higgs width is $\Gamma_H = 3.7^{+1.9}_{-1.4}$ MeV,\\ $\Rightarrow$ \textbf{there is still window for non-SM contributions.}
+    \vfill
+    \item In SM extensions, the Higgs can couple to the dark sector with a sizable fraction:
+    \[
+      \text{BR}(H \to \text{inv}) = \frac{\Gamma_H^{\text{inv}}}{\Gamma_H^{\text{SM}} + \Gamma_H^{\text{inv}}}
+    \]
+    
+    \item Experimental limit from VBF + MET:
+    \[
+      \text{BR}(H \to \text{inv}) < 0.145 \quad \text{(ATLAS, 2019, 95\% CL)}
+    \]
+    \vfill
+    \item  \textbf{Invisible Higgs decays offer a window to explore new physics and hint at the presence of dark particles.}
+  \end{itemize}
 \end{frame}
 
 \section{Theoretical Framework}
 \begin{frame}{Vector Boson Fusion (VBF) Production}
-    \begin{minipage}{0.38\textwidth}
+
+    One of the most studied and well known production mechanisms of the Higgs boson at the LHC is VBF. 
+    
+    \vfill 
+
+    In proton-proton collisions, the quark components of the protons interact via the exchange of vector bosons (W or Z), leading to the production of a Higgs boson in association with two forward jets.
+
+    \vfill 
+
+    The Higgs boson is narrow, so the total cross section can be approximated as production cross section times the branching ratio to invisible decays
+    \begin{equation*}
+            \Gamma_h/m_h \sim 3 \times 10^{-5}
+            \quad\Longrightarrow\quad
+            \sigma_{\text{total}} \approx \sigma_{\text{prod}} (\textcolor{red}{pp\boldsymbol{\to}j\,j\, h})  \times \text{BR}(\textcolor{blue}{h \boldsymbol{\to} \text{inv.}})
+    \end{equation*}
+
+    \begin{minipage}{0.42\textwidth}
         \begin{center}
             \includegraphics[width=\textwidth]{../Images/VBF.png}
         \end{center}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.6\textwidth}
-        The Higgs boson is narrow: 
-        \begin{equation*}
-            \Gamma_h/m_h = 4.07 \text{ MeV}/125 \text{ GeV} \approx 3.3 \times 10^{-5}
-        \end{equation*}
-        Cross section factorizes into production and decay:
-        \begin{multline*}
-            \sigma_{\text{total}} = \sigma_{\text{prod}} (\textcolor{red}{pp\boldsymbol{\to}j\,j\, h})  \times \text{BR}(\textcolor{blue}{h \boldsymbol{\to} \text{inv.}})
-        \end{multline*}
+    \begin{minipage}{0.5\textwidth}
+        \begin{itemize}
+            \item This process is characterized by the exchange of two vector bosons in t-channel that produces a Higgs boson in association with two jets. 
+            \vspace{0.5cm}
+            \item The Higgs to invisible decay channel could be characterized by the lost momentum in a detector in the final state.
+        \end{itemize}
+        
+
     \end{minipage}
 \end{frame}
 
 
+\begin{frame}{Monte Carlo Method Workflow}
+	\includegraphics[width=1.0\linewidth]{../Images/Workflow.png}
+\end{frame}
+
+\begin{frame}{Madgraph-Pythia8-Delphes for Colliders}
+	\begin{center}
+		\includegraphics[width=.99\linewidth]{../Images/Madgraph.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Kinematic Variables}
+    From Spherical coordinates,
+    $$
+    \begin{cases}
+        \text{Pseudorapidity: } \eta = -\ln\tan(\theta/2) \\
+        \text{Transverse momentum: } p_T = p \sin(\theta) \\
+        \text{Azimuthal angle: } \phi\\
+        \text{Deposited energy: } E \\
+    \end{cases}
+    $$
+
+	\begin{center}
+		\includegraphics[width=.98\linewidth]{../Images/Kinematic_Variables.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Example of a VBF + MET Event in the CMS Detector}
+    There is not initial momentum in the transverse plane, so from the conservation of momentum, we define the missing transverse momentum as
+    $$
+        \va*{p}_T^{\text{ mis}} = - \sum_{i} \va*{p}_{T,i}^{\text{ vis}}
+    $$
+    \begin{center}
+        \includegraphics[width=.95\linewidth]{../Images/real_vbf_event.png}
+    \end{center}
+    No Electrons or Muons neither isolated muons. 
+\end{frame}
+
+\begin{frame}{The VBF Jets are boosted with High-PT signatures}
+    \begin{minipage}{0.97\textwidth}
+        \includegraphics[width=\textwidth]{../Images/leading_jet_pt_comparison.pdf}
+    \end{minipage}
+    % \begin{minipage}{0.47\textwidth}
+    %     \includegraphics[width=\textwidth]{../Images/subleading_jet_pt_comparison.pdf}
+    % \end{minipage}
+\end{frame}
+
+\begin{frame}{The VBF Jets have a large invariant mass}
+    \begin{minipage}{0.97\textwidth}
+        \includegraphics[width=\textwidth]{../Images/dijet_mass_comparison.pdf}
+    \end{minipage}
+    
+\end{frame}
+
+\begin{frame}{The VBF Jets are forward}
+    \begin{minipage}{0.97\textwidth}
+        \includegraphics[width=\textwidth]{../Images/leading_jet_eta_comparison.pdf}
+    \end{minipage}
+    % \begin{minipage}{0.47\textwidth}
+    %     \includegraphics[width=\textwidth]{../Images/subleading_jet_pt_comparison.pdf}
+    % \end{minipage}
+\end{frame}
+
+\begin{frame}{The VBF Jets are in opposite longitudinal hemispheres}
+    \includegraphics[width=\textwidth]{../Images/eta_product_comparison.pdf}
+\end{frame}
+
+\begin{frame}{The VBF Jets have a large Delta-$\eta$ separation}
+    \includegraphics[width=\textwidth]{../Images/delta_eta_comparison.pdf}
+\end{frame}
+
+\begin{frame}{The VBF Jets are not back-to-back}
+    \includegraphics[width=\textwidth]{../Images/delta_phi_comparison.pdf}
+\end{frame}
+
+\begin{frame}{The Higgs-to-invisible decay left a High-MET signature}
+    \includegraphics[width=\textwidth]{../Images/met_comparison.pdf}
+\end{frame}
+
+\begin{frame}{All the cuts suppres the background}
+    \includegraphics[width=\textwidth]{../Images/met_comparison_after_vbf_cuts.pdf}
+\end{frame}
+
 \begin{frame}{Higgs-Portal Dark Matter Models}
-    \begin{itemize}
-        \item Scalar DM candidate: $\mathcal{L} \supset \lambda_s |H|^2 S^2$
-        \item Fermionic DM candidate: $\mathcal{L} \supset y_f H \bar{\chi} \chi$
-        \item Connection to invisible Higgs decays: $H \to \text{DM} + \text{DM}$
-        \item Parameter space: $(m_{\text{DM}}, \lambda/y_f)$
-    \end{itemize}
+    \includegraphics[width=\textwidth]{../Images/Altas_Result.png}
+    $$
+        BR(H \to \text{inv}) < 0.145 \quad \text{(ATLAS, 2019, 95\% CL)}
+    $$
 \end{frame}
 
 
+\begin{frame}{Statistical Significance}
+    The statistical significance is 
+    \begin{equation}
+        \kappa = \frac{\Braket{t}_{B} - \Braket{t}_{S+B}}{\sigma_{S+B}}
+    \end{equation}
+    where the optimal statistical test is $t=-2\ln \frac{\mathcal{L}(n|S+B)}{\mathcal{L}(n|B)}$, with $n$ the number expected of events in each hypothesis, $\mathcal{L}$ the likelihood function for $N$ a independet Poissonic distribution. so
+    \begin{equation}
+        \kappa = \frac{\sum_i s_i w_i}{\sqrt{\sum_i (s_i + b_i + \delta_{sys}^2)^2 w_i^2}}
+    \end{equation}
+    where $s_i$ and $b_i$ are the signal and background events in the $i$-th bin, $w_i\sim \ln (1+\frac{s_i}{b_i})$ is the weight of the $i$-th bin, and $\delta_{sys}$ is the systematic uncertainty in the background estimation.
 
-\begin{frame}{Invisible Higgs Decay Channels}
-    \begin{itemize}
-        \item $H \to \chi \chi$ (fermionic DM)
-        \item $H \to SS$ (scalar DM)
-        \item Branching ratios and kinematic constraints
-        \item Connection to relic density requirements
-    \end{itemize}
+    Hypothesis with a significance of $\kappa \leq 1.69\sigma$ will be excluded in searches with a 95\% confidence level (CL).
 \end{frame}
 
-\section{Methodology}
-\begin{frame}{Simulation Setup}
+
+\begin{frame}{Statistical Significance}
+    
+
+    The contribution to the number of events is of the form $N_i = \sigma_i \cdot \mathcal{L} \cdot \epsilon_i$, where $\sigma_i$ is the cross section of the process, $\mathcal{L}$ is the integrated luminosity, and $\epsilon_i$ is the efficiency of the selection cuts in the $i$-th bin.
+
+    To improve the sensitivity of the search, 
+    \begin{equation}
+        \kappa = \frac{\sum_i s_i w_i}{\sqrt{\sum_i (s_i + b_i + \delta_{sys}^2)^2 w_i^2}}
+    \end{equation}
+    We can
     \begin{itemize}
-        \item MadGraph5\_aMC@NLO for signal generation
-        \item LHC conditions at $\sqrt{s} = 13$ TeV
-        \item Process: $pp \to jj + \text{MET}$ via VBF
-        \item Systematic uncertainties and scale variations
+        \item Increase the integrated luminosity $\mathcal{L}$.
+        \item Optimize the selection cuts to increase the efficiency $\epsilon_i$ of the signal and reduce the background.
+        \item increase the cross section $\sigma_i$ of the signal process increasing the center-of-mass energy $\sqrt{s}$ of the collisions.
+        \item Add information from the correlation between bins of the histogram.
+        \item Select a observable that optimize the form of the $w_i$ weights (e.g. a BDT classifier).
     \end{itemize}
+    
 \end{frame}
 
-\begin{frame}{Experimental Recast}
+
+\begin{frame}{Projections on the Higgs-to-invisible decay}
+    So, taking $\kappa=1.69$ we have
+
+    \begin{equation}
+         \frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i} + \sigma_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}} = \frac{1.69}{\sqrt{\mathcal L}}
+    \end{equation}
+
+    In a conservative approach if we assume that the efficiencies and systematic uncertainties are constant, for future searches the limit on the Branching Ratio (BR) will scale inversely with the integrated luminosity $\mathcal{L}$. 
     \begin{itemize}
-        \item Public LHC analyses targeting $pp \to jj + \text{MET}$
-        \item Efficiency estimation and acceptance calculations
-        \item Background modeling and systematic uncertainties
-        \item Statistical treatment of exclusion limits
+        \item The current limit on the Higgs-to-invisible decay is $\text{BR}(H \to \text{inv}) < 0.145$ (ATLAS, 2019, 95\% CL).
+        \item Today the luminosity in ATLAS and CMS are arround 300~fb$^{-1}$ by the end of Run~3. So, in the near future we expect that LHC reach a sensitivity of $\text{BR}(H \to \text{inv}) < 0.08$.
+        \item With the HL-LHC, the promised integrated luminosity is 3 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < 0.008 = \mathcal{O}(10^{-2})$.
+        \item For FCC, the expected integrated luminosity is 30 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < \mathcal{O}(10^{-3})$.
     \end{itemize}
+    
 \end{frame}
 
-\section{Results}
-\begin{frame}{Current LHC Constraints}
-    \begin{itemize}
-        \item Exclusion contours in $(m_{\text{DM}}, \lambda/y_f)$ plane
-        \item Comparison between scalar and fermionic DM
-        \item Sensitivity to different mass ranges
-    \end{itemize}
-    % Add plots here
+\begin{frame}{Higgs Portals}
+    We assume the minimal Higgs portal setup with singlet DM of spin 0 or spin 1/2. In that follows, we consider these options separately and allow for both CP-even and CP-odd couplings of the DM fermion to the Higgs field. The Lagrangian reads
+    $$
+        \begin{aligned}
+        \mathcal{L}_{h s} & =\frac{\lambda_{h s}}{2} \mathcal{H}^{\dagger} \mathcal{H} S S \\
+        \mathcal{L}_{h \chi} & =\frac{1}{\Lambda} \mathcal{H}^{\dagger} \mathcal{H} \bar{\chi} \chi, \quad \mathcal{L}_{h \chi}^{\gamma_5}=\frac{1}{\Lambda_5} \mathcal{H}^{\dagger} \mathcal{H} \bar{\chi} i \gamma_5 \chi,
+        \end{aligned}
+    $$
+    where $\mathcal{H}$ is the Higgs doublet, $S$ is a real scalar singlet with mass $m_s$, and $\chi$ is a Dirac fermion with mass $m_\chi$. 
+    \begin{gather*}
+        \Gamma(h \rightarrow S S)=\frac{\lambda_{h s}^2 v^2}{32 \pi m_h} \sqrt{1-\frac{4 m_s^2}{m_h^2}} \\
+        \Gamma_{\text{CP-even}}(h \rightarrow \chi \chi)=\frac{m_h}{4 \pi} \frac{v^2}{\Lambda^2}\left(1-\frac{4 m_\chi^2}{m_h^2}\right)^{3 / 2}; \quad 
+        \Gamma_{\text{CP-odd}}(h \rightarrow \chi \chi)=\frac{m_h}{4 \pi} \frac{v^2}{\Lambda_5^2}\left(1-\frac{4 m_\chi^2}{m_h^2}\right)^{1 / 2}
+    \end{gather*}
+    These states are assumed to be stable adn thus can be considered as DM candidates. In the fermionic case, the couplings are non-renormalizable and thus are understood as effective operators with $\Lambda$ and $\Lambda_5$ being the cut-off scales. 
 \end{frame}
 
-\begin{frame}{HL-LHC Projections}
-    \begin{itemize}
-        \item Projected reach with 3 ab$^{-1}$ integrated luminosity
-        \item Improvement over current constraints
-        \item Complementarity with other search strategies
-    \end{itemize}
-    % Add projection plots here
+\begin{frame}{$\Gamma(h \rightarrow S S)=\frac{\lambda_{h s}^2 v^2}{32 \pi m_h} \sqrt{1-\frac{4 m_s^2}{m_h^2}}$}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{../Images/Portal_to_Scalar.pdf}
+    \end{center}
+\end{frame}
+\begin{frame}{$\Gamma_{\text{CP-even}}(h \rightarrow \chi \chi)=\frac{m_h}{4 \pi} \frac{v^2}{\Lambda^2}\left(1-\frac{4 m_\chi^2}{m_h^2}\right)^{3 / 2}; $}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{../Images/Portal_to_cp_even_fermion.pdf}
+    \end{center}
 \end{frame}
 
-\begin{frame}{Parameter Space Analysis}
-    \begin{itemize}
-        \item Currently excluded regions
-        \item Future sensitivity regions
-        \item Comparison with direct detection experiments
-        \item Implications for model viability
-    \end{itemize}
+\begin{frame}{$\Gamma_{\text{CP-odd}}(h \rightarrow \chi \chi)=\frac{m_h}{4 \pi} \frac{v^2}{\Lambda_5^2}\left(1-\frac{4 m_\chi^2}{m_h^2}\right)^{1 / 2}$}
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{../Images/Portal_to_cp_odd_fermion.pdf}
+    \end{center}
 \end{frame}
 
-\section{Discussion}
-\begin{frame}{Theoretical Implications}
-    \begin{itemize}
-        \item Constraints on Higgs-portal coupling strength
-        \item Impact on dark matter relic density
-        \item Model-dependent vs. model-independent results
-    \end{itemize}
-\end{frame}
+\begin{frame}{Example: Scalar-Fermion Z4 model}
+    $$
+    \mathcal{L}=\frac{1}{2} \mu_S^2 S^2+\lambda_S S^4+\frac{1}{2} \lambda_{S H}|H|^2 S^2+M_\psi \bar{\psi} \psi+\frac{1}{2}\left[y_s \overline{\psi^c} \psi+y_p \overline{\psi^c} \gamma_5 \psi+\text { h.c. }\right] S,
+    $$
 
-\begin{frame}{Experimental Considerations}
-    \begin{itemize}
-        \item Systematic uncertainties and their impact
-        \item Comparison with other Higgs production modes
-        \item Future improvements and detector upgrades
-    \end{itemize}
-\end{frame}
-
-\section{Conclusions}
-\begin{frame}{Summary}
-    \begin{itemize}
-        \item VBF provides competitive constraints on Higgs-portal DM
-        \item HL-LHC will significantly extend the reach
-        \item Both scalar and fermionic DM models constrained
-        \item Complementary approach to direct/indirect detection
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Future Outlook}
-    \begin{itemize}
-        \item Extension to other DM models
-        \item Combination with other search channels
-        \item Implications for future collider experiments
-        \item Connection to cosmological observations
-    \end{itemize}
+    In the $M_S < M_\psi$ regime, 
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{../Images/Z4_Example.png}
+    \end{center}
+    \cite{Yaguna:2021rds}
 \end{frame}
 
 \begin{frame}
