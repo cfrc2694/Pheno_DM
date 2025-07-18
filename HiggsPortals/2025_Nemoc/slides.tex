@@ -316,7 +316,7 @@ Contemporary Physics}
     To improve the sensitivity of the search, 
     \begin{equation}
         \kappa = \frac{\sum_i s_i w_i}{\sqrt{\sum_i (s_i + b_i + \delta_{sys}^2)^2 w_i^2}}
-        =\frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i}\epsilon_{s_i} + \sigma_{b_i}\epsilon_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}}\sqrt{\textcolor{blue}{\mathcal L}}
+        =\frac{\sum_i \textcolor{orange}{\sigma_{s_i}} \textcolor{red}{\epsilon_{s_i}} \textcolor{purple}{w_i}}{\sqrt{\sum_i (\textcolor{orange}{\sigma_{s_i}}\textcolor{red}{\epsilon_{s_i}} + \sigma_{b_i}\textcolor{red}{\epsilon_{b_i}} + \textcolor{green}{\delta_{\sigma_{sys}}^2})^2 \textcolor{purple}{w_i}^2}}\sqrt{\textcolor{blue}{\mathcal L}}
     \end{equation}
     We can
     \begin{itemize}
@@ -325,6 +325,7 @@ Contemporary Physics}
         \item \textcolor{orange}{increase the cross section $\sigma_i$ of the signal process increasing the center-of-mass energy $\sqrt{s}$ of the collisions.}
         \item Add information from the correlation between bins of the histogram.
         \item \textcolor{purple}{Select a observable that optimize the form of the $w_i$ weights (e.g. a BDT classifier).}
+        \item \textcolor{green}{Reduce the systematic uncertainties $\delta_{sys}$ in the background estimation.}
     \end{itemize}
     
 \end{frame}
@@ -342,9 +343,9 @@ Contemporary Physics}
 
     In a conservative approach if we assume that the efficiencies and systematic uncertainties are constant, for future searches the limit on the Branching Ratio (BR) will scale inversely with the integrated luminosity $\mathcal{L}$. 
     \begin{itemize}
-        \item The current limit on the Higgs-to-invisible decay is $\text{BR}(H \to \text{inv}) < 0.145$.
-        \item Today the luminosity in ATLAS and CMS are arround 300~fb$^{-1}$ by the end of Run~3. So, in the near future we expect that LHC reach a sensitivity of $\text{BR}(H \to \text{inv}) < 0.08$.
-        \item With the HL-LHC, the promised integrated luminosity is 3 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < 0.008 \sim \mathcal{O}(10^{-2})$.
+        \item The current limit, at $139 \text{ fb}^{-1}$ on the Higgs-to-invisible decay is $\text{BR}(H \to \text{inv}) < 0.145$.\pause
+        \item Today the luminosity in ATLAS and CMS are arround 300~fb$^{-1}$ by the end of Run~3. So, in the near future we expect that LHC reach a sensitivity of $\text{BR}(H \to \text{inv}) < 0.08$.\pause
+        \item With the HL-LHC, the promised integrated luminosity is 3 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < 0.008 \sim \mathcal{O}(10^{-2})$.\pause
         \item For FCC, the expected integrated luminosity is 30 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < \mathcal{O}(10^{-3})$.
     \end{itemize}
     
