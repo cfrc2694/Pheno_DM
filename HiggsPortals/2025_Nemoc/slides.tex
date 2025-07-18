@@ -316,15 +316,15 @@ Contemporary Physics}
     To improve the sensitivity of the search, 
     \begin{equation}
         \kappa = \frac{\sum_i s_i w_i}{\sqrt{\sum_i (s_i + b_i + \delta_{sys}^2)^2 w_i^2}}
-        =\frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i}\epsilon_{s_i} + \sigma_{b_i}\epsilon_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}}
+        =\frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i}\epsilon_{s_i} + \sigma_{b_i}\epsilon_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}}\sqrt{\textcolor{blue}{\mathcal L}}
     \end{equation}
     We can
     \begin{itemize}
-        \item Increase the integrated luminosity $\mathcal{L}$.
-        \item Optimize the selection cuts to increase the efficiency $\epsilon_i$ of the signal and reduce the background.
-        \item increase the cross section $\sigma_i$ of the signal process increasing the center-of-mass energy $\sqrt{s}$ of the collisions.
+        \item \textcolor{blue}{Increase the integrated luminosity $\mathcal{L}$.}
+        \item \textcolor{red}{Optimize the selection cuts to increase the efficiency $\epsilon_i$ of the signal and reduce the background.}
+        \item \textcolor{orange}{increase the cross section $\sigma_i$ of the signal process increasing the center-of-mass energy $\sqrt{s}$ of the collisions.}
         \item Add information from the correlation between bins of the histogram.
-        \item Select a observable that optimize the form of the $w_i$ weights (e.g. a BDT classifier).
+        \item \textcolor{purple}{Select a observable that optimize the form of the $w_i$ weights (e.g. a BDT classifier).}
     \end{itemize}
     
 \end{frame}
