@@ -136,7 +136,7 @@ Contemporary Physics}
     
     \item Experimental limit from VBF + MET:
     \[
-      \text{BR}(H \to \text{inv}) < 0.145 \quad \text{(ATLAS, 2019, 95\% CL)}
+      \text{BR}(H \to \text{inv}) < 0.145
     \]
     \vfill
     \item  \textbf{Invisible Higgs decays offer a window to explore new physics and hint at the presence of dark particles.}
@@ -211,9 +211,23 @@ Contemporary Physics}
         \va*{p}_T^{\text{ mis}} = - \sum_{i} \va*{p}_{T,i}^{\text{ vis}}
     $$
     \begin{center}
-        \includegraphics[width=.95\linewidth]{../Images/real_vbf_event.png}
+        \includegraphics[width=.90\linewidth]{../Images/real_vbf_event.png}
     \end{center}
-    No Electrons or Muons neither isolated muons. 
+\end{frame}
+
+\begin{frame}{Current Results from VBF + MET Searches}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \includegraphics[width=\textwidth]{../Images/VBF.png}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            Based on Criteria from 
+            \begin{itemize}
+                \item CMS: \cite{CMS:2022qva}
+                \item ATLAS:\cite{ATLAS:2022yvh}
+            \end{itemize}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{VBF Jets are boosted with High-PT signatures}{Leading Jet}
@@ -302,6 +316,7 @@ Contemporary Physics}
     To improve the sensitivity of the search, 
     \begin{equation}
         \kappa = \frac{\sum_i s_i w_i}{\sqrt{\sum_i (s_i + b_i + \delta_{sys}^2)^2 w_i^2}}
+        =\frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i}\epsilon_{s_i} + \sigma_{b_i}\epsilon_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}}
     \end{equation}
     We can
     \begin{itemize}
@@ -319,12 +334,15 @@ Contemporary Physics}
     So, taking $\kappa=1.69$ we have
 
     \begin{equation}
-         \frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i} + \sigma_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}} = \frac{1.69}{\sqrt{\mathcal L}}
+         \frac{\sum_i \sigma_{s_i} \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i}\epsilon_{s_i} + \sigma_{b_i}\epsilon_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}}
+         =
+         \frac{\sum_i \sigma_{s_i}^{\text{VBF}}(\text{BR}) \epsilon_{s_i} w_i}{\sqrt{\sum_i (\sigma_{s_i}^{\text{VBF}}(\text{BR}) + \sigma_{b_i}\epsilon_{b_i} + \delta_{\sigma_{sys}}^2)^2 w_i^2}}
+         = \frac{1.69}{\sqrt{\mathcal L}}
     \end{equation}
 
     In a conservative approach if we assume that the efficiencies and systematic uncertainties are constant, for future searches the limit on the Branching Ratio (BR) will scale inversely with the integrated luminosity $\mathcal{L}$. 
     \begin{itemize}
-        \item The current limit on the Higgs-to-invisible decay is $\text{BR}(H \to \text{inv}) < 0.145$ (ATLAS, 2019, 95\% CL).
+        \item The current limit on the Higgs-to-invisible decay is $\text{BR}(H \to \text{inv}) < 0.145$.
         \item Today the luminosity in ATLAS and CMS are arround 300~fb$^{-1}$ by the end of Run~3. So, in the near future we expect that LHC reach a sensitivity of $\text{BR}(H \to \text{inv}) < 0.08$.
         \item With the HL-LHC, the promised integrated luminosity is 3 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < 0.008 \sim \mathcal{O}(10^{-2})$.
         \item For FCC, the expected integrated luminosity is 30 ab$^{-1}$, which will allow us to improve the sensitivity to $\text{BR}(H \to \text{inv}) < \mathcal{O}(10^{-3})$.
