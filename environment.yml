@@ -1,0 +1,23 @@
+name: root_delphes_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - hepmc2
+  - root
+  - delphes
+  - numpy
+  - six
+  - scipy
+  - matplotlib
+  - seaborn
+  - pandas
+  - jupyterlab
+  - pip
+  - pip:
+    - pyarrow
+    - vector
+    - lxml
+    - pyhf==0.7.3
+    - plotly
